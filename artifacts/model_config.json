@@ -1,0 +1,66 @@
+{
+    "model_type": "XGBClassifier",
+    "model_version": "xgboost_fraud_v1",
+    "features": {
+        "feature_count": 33,
+        "feature_order": [
+            "Time",
+            "Amount",
+            "Amount_log",
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Hour_cos",
+            "Hour_sin"
+        ]
+    },
+    "hyperparameters": {
+        "n_estimators": 500,
+        "max_depth": 6,
+        "learning_rate": 0.05,
+        "min_child_weight": 5,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "scale_pos_weight": 599.02416918429,
+        "random_state": 42,
+        "eval_metric": "logloss"
+    },
+    "decision_threshold": 0.85,
+    "validation_metrics": {
+        "pr_auc": 0.8741906972067733,
+        "precision": 0.9672131147540983,
+        "recall": 0.8309859154929577,
+        "f1": 0.8939393939393939
+    },
+    "test_metrics": {
+        "pr_auc": 0.8234334476536455,
+        "precision": 0.9649122807017544,
+        "recall": 0.7746478873239436,
+        "f1": 0.859375
+    }
+}
