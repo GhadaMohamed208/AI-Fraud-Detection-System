@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fraud Detection System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <div>
+            <h1>AI Fraud Detection</h1>
+            <p>Hybrid Machine Learning &amp; Deep Learning Fraud Detection System</p>
+        </div>
+        <div class="status"><span class="status-dot"></span>API Online</div>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>CSV Transaction Analysis</h2>
+            <p class="description">
+                Upload a CSV file and the system will analyze every transaction automatically.
+                Feature engineering, preprocessing, hybrid prediction, and SHAP explanations for fraud cases are handled by the API.
+            </p>
+
+            <div class="section csv-section">
+                <h3>Analyze a CSV File</h3>
+                <p class="section-description">
+                    Required columns: <strong>Time, Amount, V1...V28</strong>.
+                    An optional <strong>Class</strong> column is used only to compare predictions with actual labels.
+                </p>
+
+                <div class="csv-upload-row">
+                    <label class="file-picker">
+                        <input type="file" id="csvFile" accept=".csv,text/csv">
+                        <span id="fileName">Choose CSV file</span>
+                    </label>
+                    <button class="secondary-btn" id="analyzeCsvBtn" type="button">
+                        <span id="csvButtonText">Analyze CSV</span>
+                        <span id="csvLoader" class="loader hidden"></span>
+                    </button>
+                </div>
+
+                <p class="csv-hint">Required: Time, Amount, V1-V28. Optional: Transaction_ID / ID, Class.</p>
+                <div id="csvErrorBox" class="error-box hidden"></div>
+
+                <div id="csvResultSection" class="csv-results hidden">
+                    <div class="csv-summary-grid">
+                        <div class="score-card"><span>Total Transactions</span><strong id="csvTotal">-</strong></div>
+                        <div class="score-card"><span>Fraud Detected</span><strong id="csvFraud">-</strong></div>
+                        <div class="score-card"><span>Legitimate</span><strong id="csvLegitimate">-</strong></div>
+                        <div class="score-card"><span>Fraud Rate</span><strong id="csvFraudRate">-</strong></div>
+                    </div>
+
+                    <div id="csvMetrics" class="csv-metrics hidden"></div>
+
+                    <div class="csv-actions">
+                        <button class="secondary-btn" id="downloadCsvBtn" type="button">Download Results CSV</button>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table id="csvResultsTable">
+                            <thead>
+                                <tr>
+                                    <th>Transaction</th>
+                                    <th>Amount</th>
+                                    <th>Prediction</th>
+                                    <th>Fraud Score</th>
+                                    <th>ML Score</th>
+                                    <th>Anomaly Score</th>
+                                    <th>Reason</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <p id="csvTableNote" class="csv-hint"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Fraud Detection System</p>
+        <p>XGBoost + Autoencoder + Hybrid Meta Model</p>
+    </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

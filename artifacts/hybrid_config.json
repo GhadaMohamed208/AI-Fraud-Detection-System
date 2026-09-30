@@ -1,0 +1,9 @@
+{
+    "threshold": 0.2899999999999999,
+    "meta_features": [
+        "fraud_probability",
+        "anomaly_score"
+    ],
+    "threshold_selection": "F1 maximization on a held-out validation subset",
+    "random_state": 42
+}
